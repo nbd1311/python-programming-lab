@@ -1,0 +1,102 @@
+from easygui import  *
+import sys
+list_m = []
+sum = 0
+while 1:
+    msgbox("Hello, world!")
+    msg ="Choose a product from below" 
+    title = "E-bazaar" 
+    choices = ["Clothes", "mobile", "Shoes"]
+    choice = choicebox(msg, title, choices)
+    msgbox("You chose: " + str(choice))
+    if (choice == "Clothes"):
+        msg =  "Which brand?"
+        title = "Clothes brand"
+        choices = ["Gap","uspa"]
+        choice = choicebox(msg,title,choices)
+        msgbox("You chose: "+str(choice))
+        if (choice == "gap"):
+             msg = "Which vendor?"
+             title = "Select vendor"
+             choices = ["Suresh = $4.50","Ramesh = $5.50"]
+             choice = choicebox(msg,title,choices)
+             msgbox("You chose: "+str(choice))
+             if (choice == "Suresh = $4.50"):
+                sum+=4.50
+             else:       
+                sum+=5.50
+             list_m = [choice]
+        else:  
+             msg = "For uspa, Which vendor?"
+             title = "Select vendor"
+             choices = ["Suresh = $3.50","Ramesh = $4.50"]
+             choice = choicebox(msg,title,choices)
+             msgbox("You chose: "+str(choice))
+             if (choice == "Suresh = $3.50"):
+                sum+=3.50
+             else:       
+                sum+=4.50
+             list_m = [choice]
+    elif (choice == "mobile"):
+        msg = "Which Brand?"
+        title = "Select brand"
+        choices = ["apple","vivo"]
+        choice = choicebox(msg,title,choices)
+        if (choice == "apple"):
+             msg = "Which vendor?"
+             title = "Select vendor"
+             choices = ["Suresh = $40","Ramesh  $45"]
+             choice = choicebox(msg,title,choices)
+             msgbox("You chose: "+str(choice))
+             if (choice == "Suresh = $40"):
+                sum+=40
+             else:
+                sum+=45
+             list_m.append(choice)
+        elif (choice == "vivo") :
+             msg = "Which vendor?"
+             title = "Select vendor"
+             choices = ["Suresh = $30","Ramesh = $32"]
+             choice = choicebox(msg,title,choices)
+             msgbox("You chose: "+str(choice))
+             if (choice == "Suresh = $3"):
+                sum+=30
+             else:
+                sum+=32
+             list_m.append(choice)
+    elif (choice == "Shoes"):
+        msg = "Which brand?"
+        title = "Select brand"
+        choices = ["Nike","Puma"]
+        choice = choicebox(msg,title,choices)
+        msgbox("You chose: "+str(choice))
+        if (choice == "Nike"):
+             msg = "Which vendor?"
+             title = "Select vendor"
+             choices = ["Suresh = $13","Ramesh = $15"]
+             choice = choicebox(msg,title,choices)
+             msgbox("You chose: "+str(choice))
+             if (choice == "Suresh = $13"):
+                sum+=13
+             else:
+                sum+=15
+             list_m.append(choice)
+        else:
+             msg = "Which vendor?"
+             title = "Select vendor"
+             choices = ["Suresh = $14","Ramesh = $17"]
+             choice = choicebox(msg,title,choices)
+             msgbox("You chose: "+str(choice))
+             if (choice == "Suresh = $14"):
+                sum+=14
+             else: 
+                sum+=17
+             list_m.append(choice) 
+    if ccbox('Would you like to continue?', 'Add to cart'):     # show a Continue/Cancel dialog
+        pass  # user chose Continue
+        #print(sum)
+        #print(list_m)
+    else:
+        print(sum)
+        print(list_m)
+        sys.exit(0)
